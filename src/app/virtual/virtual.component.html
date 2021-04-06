@@ -1,1 +1,33 @@
-<p>virtual works!</p>
+
+<div class="row">
+    <div class="col">
+        <button class="btn btn-primary"
+                (click)="irFinal()">
+            Ir al Final
+        </button>
+    </div>
+
+    <div class="col">
+        <button class="btn btn-warning"
+                (click)="irMitad()">
+            Ir al Mitad
+        </button>
+    </div>
+
+    <div class="col">
+        <button class="btn btn-secondary"
+                (click)="irInicio()">
+            Ir al Inicio
+        </button>
+    </div>
+</div>
+
+<hr>
+
+<cdk-virtual-scroll-viewport itemSize="50" class="list-container list-container">
+
+    <div class="list-group-item" *cdkVirtualFor="let persona of personas; let i=index ; let conteo=count">
+        Item  {{i}} / {{conteo}}
+    </div>
+
+</cdk-virtual-scroll-viewport>
